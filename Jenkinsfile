@@ -8,6 +8,8 @@ pipeline {
         stage('Which Java?') {
             steps {
                 sh 'java --version'
+                echo 'pwd'
+                echo pwd
             }
         }
         stage('Build') {
