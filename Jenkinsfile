@@ -5,17 +5,12 @@ pipeline {
         DOCKER_IMAGE_NAME = "sathya33/train-schedule"
     }
     stages {
-        stage('Which Java?') {
-            steps {
-                sh 'java --version'
-                echo 'pwd'
-                echo pwd
-            }
-        }
         stage('Build') {
             steps {
+                sh 'java --version'
                 echo 'Running build automation'
-                sh './gradle build --no-daemon'
+                echo pwd
+                sh './gradlew build --no-daemon'
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
         }
