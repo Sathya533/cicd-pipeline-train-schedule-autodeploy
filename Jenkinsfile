@@ -5,6 +5,11 @@ pipeline {
         DOCKER_IMAGE_NAME = "sathya33/train-schedule"
     }
     stages {
+        stage('Which Java?') {
+            steps {
+                sh 'java --version'
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Running build automation'
